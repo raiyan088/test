@@ -2,8 +2,9 @@ const puppeteer = require('puppeteer');
 
 async function run() {
   const browser = await puppeteer.launch({
-    args: ["--no-sandbox", "--disabled-setupid-sandbox"],
-  });
+        headless: true,
+        args: [ '--no-sandbox', '--disable-setuid-sandbox' ]
+  })
   const page = await browser.newPage();
 
   await page.setUserAgent('Mozilla/5.0 (Linux; Android 7.0; SM-G930V Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.125 Mobile Safari/537.36')
