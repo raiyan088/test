@@ -49,19 +49,19 @@ setInterval(() => {
 connect01()
 
 setTimeout(() => {
-    connect02()
+//     connect02()
 }, 1 * 5000)
 
 setTimeout(() => {
-    connect03()
+//     connect03()
 }, 2 * 5000)
 
 setTimeout(() => {
-    connect04()
+//     connect04()
 }, 3 * 5000)
 
 setTimeout(() => {
-    connect05()
+//     connect05()
 }, 4 * 5000)
 
 
