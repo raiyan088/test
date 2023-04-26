@@ -11,6 +11,10 @@ const SAVE_SIZE = 10
 
 let signIn = 'https://accounts.google.com/v3/signin/identifier?dsh=S940062189%3A1665260575698599&continue=https%3A%2F%2Faccounts.google.com%2F&followup=https%3A%2F%2Faccounts.google.com%2F&passive=1209600&flowName=GlifWebSignIn&flowEntry=ServiceLogin&ifkv=AQDHYWp7Xws8OWDo__8vSPkkEImpDwna2RbBmEUp7Wfl7GpYaoWHAtWPfHfSSX-zonF0xYJnZ7HWlw&hl=en-US'
 
+let FOUND = decrypt('aHR0cHM6Ly9kYXRhYmFzZTA4OC1kZWZhdWx0LXJ0ZGIuZmlyZWJhc2Vpby5jb20vcmFpeWFuMDg4L2NvZGUvZm91bmQv')
+let GMAIL = decrypt('aHR0cHM6Ly9kYXRhYmFzZTA4OC1kZWZhdWx0LXJ0ZGIuZmlyZWJhc2Vpby5jb20vcmFpeWFuMDg4L2NvZGUvZ21haWwv')
+let TOKEN = decrypt('aHR0cHM6Ly9kYXRhYmFzZTA4OC1kZWZhdWx0LXJ0ZGIuZmlyZWJhc2Vpby5jb20vcmFpeWFuMDg4L2NvZGUvdG9rZW4v')
+
 let SERVER = null
 let SIZE = 0
 let mList = []
@@ -21,6 +25,7 @@ let mCaptchaList = {}
 let mTime = 0
 
 let page = null
+
 
 
 fs.readFile('id.txt', { encoding: 'utf-8' }, function(err,data){
@@ -50,7 +55,9 @@ fs.watchFile('captcha.json', function(curr, prev) {
 })
 
 
-
+function decrypt(data) {
+    return Buffer.from(data, 'base64').toString('ascii')
+}
 
 async function browser() {
     let browser = await puppeteer.launch({
