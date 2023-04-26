@@ -25,20 +25,32 @@ const mainDir = require.resolve('puppeteer')
 let path = mainDir.substring(0, mainDir.lastIndexOf('\\')+1)+'lib\\FrameManager.js'
 let path2 = mainDir.substring(0, mainDir.lastIndexOf('\\')+1)+'lib\\Connection.js'
 
-
-fs.copyFile('FrameManager.js', path, (err) => {
+fs.unlink(path, (err) => {
     if (err) {
-        console.log(err)
+        console.error(err)
     } else {
-        fs.copyFile('Connection.js', path2, (err) => {
+        fs.unlink(path2, (err) => {
             if (err) {
-                console.log(err)
+                console.error(err)
             } else {
-                console.log('File Change Success')
+                // fs.copyFile('FrameManager.js', path, (err) => {
+                //     if (err) {
+                //         console.log(err)
+                //     } else {
+                //         fs.copyFile('Connection.js', path2, (err) => {
+                //             if (err) {
+                //                 console.log(err)
+                //             } else {
+                //                 console.log('File Change Success')
+                //             }
+                //         })
+                //     }
+                // })
             }
         })
     }
 })
+
 
 setInterval(() => {
     update++
