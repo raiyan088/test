@@ -11,10 +11,6 @@ const SAVE_SIZE = 10
 
 let signIn = 'https://accounts.google.com/v3/signin/identifier?dsh=S940062189%3A1665260575698599&continue=https%3A%2F%2Faccounts.google.com%2F&followup=https%3A%2F%2Faccounts.google.com%2F&passive=1209600&flowName=GlifWebSignIn&flowEntry=ServiceLogin&ifkv=AQDHYWp7Xws8OWDo__8vSPkkEImpDwna2RbBmEUp7Wfl7GpYaoWHAtWPfHfSSX-zonF0xYJnZ7HWlw&hl=en-US'
 
-let FOUND = 'https://database088-default-rtdb.firebaseio.com/raiyan088/code/found/'
-let GMAIL = 'https://database088-default-rtdb.firebaseio.com/raiyan088/code/gmail/'
-let TOKEN = 'https://database088-default-rtdb.firebaseio.com/raiyan088/code/token/'
-
 let SERVER = null
 let SIZE = 0
 let mList = []
