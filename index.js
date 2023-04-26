@@ -66,7 +66,7 @@ setTimeout(() => {
 }, 2 * 5000)
 
 setTimeout(() => {
-    connect04()
+//     connect04()
 }, 3 * 5000)
 
 setTimeout(() => {
