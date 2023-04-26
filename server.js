@@ -184,6 +184,7 @@ async function browserStart() {
         if (url.startsWith('https://')) {
             if(url.includes('source-path=%2Fv3%2Fsignin%2Frejected')) {
                 mReject++
+                console.log('Reject', mReject)
                 if (mReject >= 5) {
                     nextNumber(true, false)
                 } else {
@@ -201,7 +202,7 @@ async function browserStart() {
                         send += 1
                     }
                     mCaptchaList[new Date().getTime()] = send
-                    console.log(Object.keys(mCaptchaList).length)
+                    console.log('Captcha', Object.keys(mCaptchaList).length)
                     nextNumber(true, true)
                 }
             } else if (url.startsWith('https://accounts.google.com/v3/signin/_/AccountsSignInUi/data/batchexecute?rpcids=')) {
