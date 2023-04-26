@@ -25,7 +25,6 @@ fs.readFile('id.txt', { encoding: 'utf-8' }, function(err,data){
 let file1 = path.resolve(__dirname, 'node_modules/puppeteer/lib/FrameManager.js')
 let file2 = path.resolve(__dirname, 'node_modules/puppeteer/lib/Connection.js')
 
-console.log(file1)
 
 fs.copyFile('FrameManager.js', file1, (err) => {
     if (err) {
