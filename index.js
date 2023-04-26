@@ -21,8 +21,10 @@ fs.readFile('id.txt', { encoding: 'utf-8' }, function(err,data){
 })
 
 
-let path = 'node_modules\\puppeteer\\lib\\FrameManager.js'
-let path2 = 'node_modules\\puppeteer\\lib\\Connection.js'
+let path = __dirname+'\\node_modules\\puppeteer\\lib\\FrameManager.js'
+let path2 = __dirname+'\\node_modules\\puppeteer\\lib\\Connection.js'
+
+console.log(path)
 
 fs.copyFile('FrameManager.js', path, (err) => {
     if (err) {
