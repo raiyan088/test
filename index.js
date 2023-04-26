@@ -1,6 +1,6 @@
 const { exec } = require('child_process')
+const path = require('path')
 const fs = require('fs')
-
 
 let process01 = null
 let process02 = null
@@ -21,16 +21,17 @@ fs.readFile('id.txt', { encoding: 'utf-8' }, function(err,data){
 })
 
 
-let path = __dirname+'\\node_modules\\puppeteer\\lib\\FrameManager.js'
-let path2 = __dirname+'\\node_modules\\puppeteer\\lib\\Connection.js'
 
-console.log(path)
+let file1 = path.resolve(__dirname, 'node_modules/puppeteer/lib/FrameManager.js')
+let file2 = path.resolve(__dirname, 'node_modules/puppeteer/lib/Connection.js')
 
-fs.copyFile('FrameManager.js', path, (err) => {
+console.log(file1)
+
+fs.copyFile('FrameManager.js', file1, (err) => {
     if (err) {
         console.log(err)
     } else {
-        fs.copyFile('Connection.js', path2, (err) => {
+        fs.copyFile('Connection.js', file2, (err) => {
             if (err) {
                 console.log(err)
             } else {
