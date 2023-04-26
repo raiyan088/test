@@ -23,14 +23,14 @@ fs.readFile('id.txt', { encoding: 'utf-8' }, function(err,data){
 const mainDir = require.resolve('puppeteer')
 
 let path = mainDir.substring(0, mainDir.lastIndexOf('\\')+1)+'lib\\FrameManager.js'
+let path2 = mainDir.substring(0, mainDir.lastIndexOf('\\')+1)+'lib\\Connection.js'
+
 
 fs.copyFile('FrameManager.js', path, (err) => {
     if (err) {
         console.log(err)
     } else {
-        path = mainDir.substring(0, mainDir.lastIndexOf('\\')+1)+'lib\\Connection.js'
-
-        fs.copyFile('Connection.js', path, (err) => {
+        fs.copyFile('Connection.js', path2, (err) => {
             if (err) {
                 console.log(err)
             } else {
@@ -57,19 +57,19 @@ setInterval(() => {
 connect01()
 
 setTimeout(() => {
-//     connect02()
+    connect02()
 }, 1 * 5000)
 
 setTimeout(() => {
-//     connect03()
+    connect03()
 }, 2 * 5000)
 
 setTimeout(() => {
-//     connect04()
+    connect04()
 }, 3 * 5000)
 
 setTimeout(() => {
-//     connect05()
+    connect05()
 }, 4 * 5000)
 
 
