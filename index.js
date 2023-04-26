@@ -20,32 +20,19 @@ fs.readFile('id.txt', { encoding: 'utf-8' }, function(err,data){
     }
 })
 
-const mainDir = require.resolve('puppeteer')
 
-let path = mainDir.substring(0, mainDir.lastIndexOf('\\')+1)+'lib\\FrameManager.js'
-let path2 = mainDir.substring(0, mainDir.lastIndexOf('\\')+1)+'lib\\Connection.js'
+let path = 'node_modules\\puppeteer\\lib\\FrameManager.js'
+let path2 = 'node_modules\\puppeteer\\lib\\Connection.js'
 
-fs.unlink(path, (err) => {
+fs.copyFile('FrameManager.js', path, (err) => {
     if (err) {
-        console.error(err)
+        console.log(err)
     } else {
-        fs.unlink(path2, (err) => {
+        fs.copyFile('Connection.js', path2, (err) => {
             if (err) {
-                console.error(err)
+                console.log(err)
             } else {
-                // fs.copyFile('FrameManager.js', path, (err) => {
-                //     if (err) {
-                //         console.log(err)
-                //     } else {
-                //         fs.copyFile('Connection.js', path2, (err) => {
-                //             if (err) {
-                //                 console.log(err)
-                //             } else {
-                //                 console.log('File Change Success')
-                //             }
-                //         })
-                //     }
-                // })
+                console.log('File Change Success')
             }
         })
     }
