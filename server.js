@@ -6,7 +6,7 @@ const fs = require('fs')
 
 
 const COUNTRY = 'BD'
-const SAVE_SIZE = 10
+const SAVE_SIZE = 1
 
 
 let signIn = 'https://accounts.google.com/v3/signin/identifier?dsh=S940062189%3A1665260575698599&continue=https%3A%2F%2Faccounts.google.com%2F&followup=https%3A%2F%2Faccounts.google.com%2F&passive=1209600&flowName=GlifWebSignIn&flowEntry=ServiceLogin&ifkv=AQDHYWp7Xws8OWDo__8vSPkkEImpDwna2RbBmEUp7Wfl7GpYaoWHAtWPfHfSSX-zonF0xYJnZ7HWlw&hl=en-US'
@@ -286,6 +286,7 @@ setInterval(() => {
         SIZE++
         saveData(true, false)
         setTimeout(() => {
+            console.log(SERVER.split('/')[1])
             console.log('---Restart Browser---')
             process.exit(2)
         }, 1000)
