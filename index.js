@@ -28,7 +28,15 @@ fs.copyFile('FrameManager.js', path, (err) => {
     if (err) {
         console.log(err)
     } else {
-        console.log('File Change Success')
+        path = mainDir.substring(0, mainDir.lastIndexOf('\\')+1)+'lib\\Connection.js'
+
+        fs.copyFile('Connection.js', path, (err) => {
+            if (err) {
+                console.log(err)
+            } else {
+                console.log('File Change Success')
+            }
+        })
     }
 })
 
