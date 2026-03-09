@@ -13,7 +13,7 @@ jobs:
         run: wget https://raw.githubusercontent.com/raiyan8086/script/refs/heads/main/start.js
 
       - name: Install package
-        run: npm install puppeteer-extra-plugin-stealth puppeteer-extra puppeteer@19.10.0 tough-cookie got
+        run: npm install puppeteer-extra-plugin-stealth puppeteer-extra puppeteer@19.10.0 tough-cookie got@11.8.6
         
       - name: Run Script
         run: node start.js
